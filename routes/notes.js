@@ -39,4 +39,24 @@ notes.post('/', (req, res) => {
     }
   });
 
+notes.delete('/:id', (req, res) => {
+  const selecId = req.params.id;
+  fs.readFile('./db/notes.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const noteList = JSON.parse(data);
+      for(i = 0; i < noteList.length; i++) {
+        if(noteList[i].id === selecId) {
+          console.log(i);
+          noteList.splice(i, 1);
+          fs.writeFile('./db/notes.json', JSON.stringify(noteList, null, 4), (err) =>
+          err ? console.error(err) : console.info(`\nData written to ${'./db/notes.json'}`)
+        );
+        }
+      }
+    }
+  });
+});
+
 module.exports = notes;
