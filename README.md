@@ -15,6 +15,8 @@
 
   A note taking application that allows the user to write and save notes.
 
+  ![Sceenshot](https://github.com/hewman82/Note-Taker/blob/main/public/assets/images/Screenshot%20(47).png)
+
   ## Installation
 
   Clone the github repo and run npm i in the terminal to install the necessary npm packages.
