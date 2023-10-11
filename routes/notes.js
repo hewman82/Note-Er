@@ -20,6 +20,7 @@ notes.post('/', (req, res) => {
       const newNote = {
         title,
         text,
+        // Randomly generate id
         id: uuidv4(),
       };
   
@@ -66,4 +67,5 @@ notes.delete('/:id', (req, res) => {
   });
 });
 
+// Export notes routes
 module.exports = notes;
