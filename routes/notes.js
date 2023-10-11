@@ -12,8 +12,6 @@ notes.get('/', (req, res) => {
 
 // POST Route for a new note
 notes.post('/', (req, res) => {
-    console.log(req.body);
-  
     const { title, text } = req.body;
   
     if (req.body) {
@@ -31,10 +29,13 @@ notes.post('/', (req, res) => {
           const parsedData = JSON.parse(data);
           parsedData.push(newNote);
           fs.writeFile('./db/notes.json', JSON.stringify(parsedData, null, 4), (err) =>
-    err ? console.error(err) : console.info(`\nData written to ${'./db/notes.json'}`)
-  );
+            err ? 
+            console.error(err) : 
+            console.info(`\nData written to ${'./db/notes.json'}`)
+          );
         }
-      })
+      });
+      res.json(`Note added`);
     } else {
       res.err('Error in adding note');
     }
@@ -59,12 +60,15 @@ notes.delete('/:id', (req, res) => {
           noteList.splice(i, 1);
           // Rewrite notes db file with new array
           fs.writeFile('./db/notes.json', JSON.stringify(noteList, null, 4), (err) =>
-          err ? console.error(err) : console.info(`\nNote deleted from ${'./db/notes.json'}`)
-        );
+            err ? 
+            console.error(err) : 
+            console.info(`\nNote deleted from ${'./db/notes.json'}`)
+          );
         }
       }
     }
   });
+  res.json(`Note deleted`);
 });
 
 // Export notes routes
