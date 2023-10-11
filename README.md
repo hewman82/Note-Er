@@ -1,6 +1,6 @@
 ![Static Badge](https://img.shields.io/badge/LICENSE-MIT_License-purple)
 
-  # Noter
+  # Note-Taker
 
   ## Table of Contents
 
@@ -8,7 +8,6 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributing](#contributing)
-  - [Tests](#tests)
   - [License](#license)
   - [Questions](#questions)
 
@@ -27,9 +26,6 @@
   ## Contributing
   
   If you have suggestions on how to improve the application, you can open an issue on the github page with the tag "suggestion" or fork the project, create a feature branch, commit your changes, push to your branch, and open a pull request.
-  
-  ## Tests
-  T
   
   ## License 
   MIT License
